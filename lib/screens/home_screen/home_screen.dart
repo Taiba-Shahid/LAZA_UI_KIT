@@ -3,7 +3,7 @@ import 'package:remixicon/remixicon.dart';
 import 'package:twentyscreen_app/utils/colors.dart';
 import 'package:twentyscreen_app/utils/text.dart';
 
-import '../../widgets/back_button.dart';
+import '../../widgets/circular_button.dart';
 import '../address_screen/adress_screen.dart';
 import '../forgot_screen/forgot_screen.dart';
 import '../product_detail_screen/product_detail_screen.dart';

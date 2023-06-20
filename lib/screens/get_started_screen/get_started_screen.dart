@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:twentyscreen_app/utils/colors.dart';
-import 'package:twentyscreen_app/widgets/back_button.dart';
+import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
 
 import '../../utils/text.dart';

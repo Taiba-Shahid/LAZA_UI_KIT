@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:twentyscreen_app/utils/text.dart';
-import 'package:twentyscreen_app/widgets/back_button.dart';
+import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
 
 import '../reviews_list_screen/reviews_list_screen.dart';

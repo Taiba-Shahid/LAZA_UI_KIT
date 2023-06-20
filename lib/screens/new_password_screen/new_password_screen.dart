@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twentyscreen_app/screens/signup_screen/textfeild.dart';
-import 'package:twentyscreen_app/widgets/back_button.dart';
+import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
 
 import '../../utils/text.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:twentyscreen_app/widgets/back_button.dart';
+import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
 
 import '../forgot_screen/forgot_screen.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:twentyscreen_app/screens/reviews_list_screen/review_container.dart';
 import 'package:twentyscreen_app/widgets/circular_button.dart';
-import 'review_container.dart';
 
 class ReviewsList extends StatelessWidget {
   const ReviewsList({super.key});
