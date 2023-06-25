@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:remixicon/remixicon.dart';
+import 'package:twentyscreen_app/screens/drawer_screen/drawer_screen.dart';
+import 'package:twentyscreen_app/screens/items_screens/items_screens.dart';
 import 'package:twentyscreen_app/utils/colors.dart';
 import 'package:twentyscreen_app/utils/text.dart';
+import 'package:twentyscreen_app/widgets/border_textfeild.dart';
 
 import '../../widgets/circular_button.dart';
-import '../address_screen/adress_screen.dart';
 import '../forgot_screen/forgot_screen.dart';
-import '../product_detail_screen/product_detail_screen.dart';
 import 'components/choosebrand_containers.dart';
 import 'components/gridcontent.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: const Color(0xff8F959E),
-        selectedItemColor: const Color(0xff9775FA),
-        currentIndex: 0,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_outline), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.wallet), label: ""),
-        ],
+      key: _key,
+      drawer: const Drawer(
+        child: DrawerScreen(),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -40,15 +39,13 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CircularButton(
-                  icon: Remix.menu_2_fill,
-                  onPressed: () => Navigator.pop(context),
-                ),
+                    icon: Remix.menu_2_fill,
+                    onPressed: () {
+                      _key.currentState?.openDrawer();
+                    }),
                 CircularButton(
                   icon: Remix.shopping_cart_fill,
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AdressScreen())),
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -66,34 +63,29 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  height: 50,
-                  width: 270,
-                  decoration: BoxDecoration(
-                      color: const Color(0xffF5F6FA),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: const Row(
-                    children: [
-                      Icon(
-                        Icons.search,
-                        color: Color(0xff8F959E),
-                      ),
-                      Text(
-                        "Search...",
-                        style: lightHeadingText,
-                      )
-                    ],
-                  ),
+                const BorderTextFeild(
+                  hinttext: "Search..",
+                  heights: 50,
+                  widths: 260,
+                  icons: Icons.search,
                 ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                      color: purplecolor,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: const Icon(
-                    Remix.user_voice_fill,
-                    color: Colors.white,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ItemScreen()));
+                  },
+                  child: Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                        color: purplecolor,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: const Icon(
+                      Remix.user_voice_fill,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
@@ -171,10 +163,12 @@ class HomeScreen extends StatelessWidget {
                 mainAxisSpacing: 10, // Number of columns
                 children: const [
                   Gridcontent(
-                      images: AssetImage(
-                        "assets/images/Rectangle 568.png",
-                      ),
-                      textt: "Nike Sportswear Club Fleece", price: 99,),
+                    images: AssetImage(
+                      "assets/images/Rectangle 568.png",
+                    ),
+                    textt: "Nike Sportswear Club Fleece",
+                    price: 99,
+                  ),
                   Gridcontent(
                       images: AssetImage("assets/images/Rectangle 569.png"),
                       textt: "Trail Running Jacket Nike Windrunner",

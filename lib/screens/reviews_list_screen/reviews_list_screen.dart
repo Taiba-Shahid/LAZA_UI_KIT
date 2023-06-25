@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:twentyscreen_app/screens/add_review_screen/add_review_screen.dart';
 import 'package:twentyscreen_app/widgets/circular_button.dart';
+
 import 'review_container.dart';
 
 class ReviewsList extends StatelessWidget {
@@ -12,7 +14,7 @@ class ReviewsList extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
-             Padding(
+            Padding(
               padding: const EdgeInsets.only(top: 60),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,7 +55,7 @@ class ReviewsList extends StatelessWidget {
                             Image(image: AssetImage("assets/images/Star.png")),
                           ],
                         ),
-                        const SizedBox(width: 105),
+                        const SizedBox(width: 99),
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xffFF7043)),
@@ -62,7 +64,7 @@ class ReviewsList extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const ReviewsList()));
+                                          const AddReviewScreen()));
                             },
                             child: const Row(
                               children: [

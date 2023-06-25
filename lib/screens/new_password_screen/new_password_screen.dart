@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:twentyscreen_app/screens/signup_screen/textfeild.dart';
+import 'package:twentyscreen_app/Navigationbar/bottom_navigation_bar.dart';
 import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
+import 'package:twentyscreen_app/widgets/custom_textfeild.dart';
 
 import '../../utils/text.dart';
 import '../forgot_screen/forgot_screen.dart';
-import '../home_screen/home_screen.dart';
 
 class NewPasswordScreen extends StatelessWidget {
   const NewPasswordScreen({super.key});
@@ -18,7 +18,7 @@ class NewPasswordScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-               Row(
+              Row(
                 children: [
                   CircularButton(
                     icon: Icons.arrow_back,
@@ -33,11 +33,11 @@ class NewPasswordScreen extends StatelessWidget {
               const SizedBox(
                 height: 110,
               ),
-              const TextFeild(textheading: "Password"),
+              const CostumnTextFeild(textFeildName: "Password"),
               const SizedBox(
                 height: 20,
               ),
-              const TextFeild(textheading: "Confirm Password"),
+              const CostumnTextFeild(textFeildName: "New Password"),
               const SizedBox(
                 height: 200,
               ),
@@ -54,7 +54,7 @@ class NewPasswordScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const HomeScreen()));
+                          builder: (context) => const BottomNavigation()));
                 },
               ),
             ],

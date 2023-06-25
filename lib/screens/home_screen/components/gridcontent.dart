@@ -27,6 +27,7 @@ class Gridcontent extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
+            
               decoration: BoxDecoration(
                 color: const Color(0xffF5F6FA),
                 borderRadius:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remixicon/remixicon.dart';
+import 'package:twentyscreen_app/screens/add_to_cart_screen/add_to_cart_screen.dart';
 import 'package:twentyscreen_app/utils/text.dart';
 import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
@@ -299,7 +300,12 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
                   CustomButton(
                     text: 'Add to Cart',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => const AddToCartScreen())));
+                    },
                   ),
                 ],
               ),

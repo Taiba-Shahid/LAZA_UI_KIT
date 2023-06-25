@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:twentyscreen_app/utils/text.dart';
 import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
+import 'package:twentyscreen_app/widgets/custom_textfeild.dart';
 
 import '../forgot_screen/forgot_screen.dart';
-import '../signup_screen/textfeild.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-             Row(
+            Row(
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 20, top: 60),
@@ -37,11 +37,11 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 80,
             ),
-            const TextFeild(textheading: "Username"),
+            const CostumnTextFeild(textFeildName: "Username"),
             const SizedBox(
               height: 15,
             ),
-            const TextFeild(textheading: "Password"),
+            const CostumnTextFeild(textFeildName: "Password"),
             const Padding(
               padding: EdgeInsets.only(left: 15, right: 15, top: 20),
               child: Row(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:twentyscreen_app/widgets/border_textfeild.dart';
 import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
-
 
 class AdressScreen extends StatelessWidget {
   const AdressScreen({super.key});
@@ -11,172 +11,129 @@ class AdressScreen extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-             Padding(
-              padding: const EdgeInsets.only(
-                top: 60,
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                 CircularButton(
-                    icon: Icons.arrow_back,
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                  const SizedBox(
-                    width: 80,
-                  ),
-                  const Center(
-                    child: Text(
-                      "Address",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 60,
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircularButton(
+                      icon: Icons.arrow_back,
+                      onPressed: () => Navigator.pop(context),
                     ),
-                  )
+                    const SizedBox(
+                      width: 80,
+                    ),
+                    const Center(
+                      child: Text(
+                        "Address",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w600),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text(
+                "Name",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const BorderTextFeild(
+                hinttext: "Type your name",
+                heights: 50,
+                widths: 350,
+                icons: null,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Country",
+                      ),
+                      BorderTextFeild(
+                        hinttext: "Contry",
+                        heights: 50,
+                        widths: 150,
+                      )
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "City",
+                      ),
+                      BorderTextFeild(
+                          hinttext: "City", heights: 50, widths: 150)
+                    ],
+                  ),
                 ],
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text(
-              "Name",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 60,
-              width: 350,
-              decoration: BoxDecoration(
-                  color: const Color(0xffF5F6FA),
-                  borderRadius: BorderRadius.circular(15)),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 8, top: 18, bottom: 10),
-                child: Text(
-                  "Type Your Name",
-                  style: TextStyle(
-                      color: Color(
-                        0xff8F959E,
-                      ),
-                      fontSize: 15),
-                ),
+              const SizedBox(
+                height: 15,
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-              //   Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       Text(
-              //         "Country",
-              //         style: headingText,
-              //       ),
-              //       Buttons(
-              //           buttoncolor: Color(0xffF5F6FA),
-              //           buttoName: "Bangladesh",
-              //           buttontextstyle: lightHeadingText)
-              //     ],
-              //   ),
-              //   Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       Text(
-              //         "City",
-              //         style: headingText,
-              //       ),
-              //       Buttons(
-              //           buttoncolor: Color(0xffF5F6FA),
-              //           buttoName: "Sylhet",
-              //           buttontextstyle: lightHeadingText)
-              //     ],
-              //   ),
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const Text(
-              "Phone Number",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 60,
-              width: 350,
-              decoration: BoxDecoration(
-                  color: const Color(0xffF5F6FA),
-                  borderRadius: BorderRadius.circular(15)),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 8, top: 18, bottom: 10),
-                child: Text(
-                  "Type Your Number",
-                  style: TextStyle(
-                      color: Color(
-                        0xff8F959E,
-                      ),
-                      fontSize: 15),
-                ),
+              const Text(
+                "Phone Number",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const Text(
-              "Address",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 60,
-              width: 350,
-              decoration: BoxDecoration(
-                  color: const Color(0xffF5F6FA),
-                  borderRadius: BorderRadius.circular(15)),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 8, top: 18, bottom: 10),
-                child: Text(
-                  "Type Your Address",
-                  style: TextStyle(
-                      color: Color(
-                        0xff8F959E,
-                      ),
-                      fontSize: 15),
-                ),
+              const SizedBox(
+                height: 10,
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  "Save as primary address?",
-                  style: TextStyle(fontSize: 15),
-                ),
-                Switch(
-                    value: true,
-                    activeColor: const Color(0xff4BC76D),
-                    onChanged: (po) {})
-              ],
-            ),
-            const SizedBox(
-              height: 70,
-            ),
-            CustomButton(
-              text: 'Save Address',
-              onPressed: () {},
-            ),
-          ],
+              const BorderTextFeild(
+                  hinttext: "Type your number", heights: 50, widths: 350),
+              // Container(
+
+              const SizedBox(
+                height: 15,
+              ),
+              const Text(
+                "Address",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const BorderTextFeild(
+                  hinttext: "Enter your address", heights: 50, widths: 350),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Save as primary address?",
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  Switch(
+                      value: true,
+                      activeColor: const Color(0xff4BC76D),
+                      onChanged: (po) {})
+                ],
+              ),
+              const SizedBox(
+                height: 100,
+              ),
+              CustomButton(
+                text: 'Save Address',
+                onPressed: () {},
+              ),
+            ],
+          ),
         ),
       ),
     );

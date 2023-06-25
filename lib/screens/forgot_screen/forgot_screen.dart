@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:twentyscreen_app/utils/text.dart';
 import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
+import 'package:twentyscreen_app/widgets/custom_textfeild.dart';
 
-import '../signup_screen/textfeild.dart';
 import '../verification_screen/verification_screen.dart';
 
 class ExtraBoldText extends StatelessWidget {
@@ -31,9 +31,9 @@ class ForgotScreen extends StatelessWidget {
         padding: const EdgeInsets.only(left: 15, right: 15, top: 60),
         child: Column(
           children: [
-             Row(
+            Row(
               children: [
-               CircularButton(
+                CircularButton(
                   icon: Icons.arrow_back,
                   onPressed: () => Navigator.pop(context),
                 ),
@@ -47,7 +47,7 @@ class ForgotScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            const TextFeild(textheading: "Email Address"),
+            const CostumnTextFeild(textFeildName: "Email Adress"),
             const SizedBox(
               height: 115,
             ),

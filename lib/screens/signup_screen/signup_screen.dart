@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
+import 'package:twentyscreen_app/widgets/custom_textfeild.dart';
 
 import '../forgot_screen/forgot_screen.dart';
 import '../login_screen/login_screen.dart';
-import 'textfeild.dart';
+
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({
@@ -20,7 +21,7 @@ class SignUpScreen extends StatelessWidget {
             const SizedBox(
               height: 60,
             ),
-             Padding(
+            Padding(
               padding: const EdgeInsets.only(left: 15),
               child: Row(
                 children: [
@@ -35,15 +36,21 @@ class SignUpScreen extends StatelessWidget {
             const SizedBox(
               height: 100,
             ),
-            const TextFeild(textheading: "Username"),
+            const CostumnTextFeild(
+              textFeildName: "User Name",
+            ),
             const SizedBox(
               height: 15,
             ),
-            const TextFeild(textheading: "Password"),
+            const CostumnTextFeild(
+              textFeildName: "Password",
+            ),
             const SizedBox(
               height: 15,
             ),
-            const TextFeild(textheading: "Emai Adress"),
+            const CostumnTextFeild(
+              textFeildName: "Email Adress",
+            ),
             const SizedBox(
               height: 20,
             ),
