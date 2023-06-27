@@ -15,7 +15,7 @@ class ReviewsList extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 60),
+              padding: const EdgeInsets.only(top: 30),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -36,26 +36,29 @@ class ReviewsList extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                const Text(
+                  "245 Reviews",
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Text(
-                      "245 Reviews",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text("4.8"),
+                        Image(image: AssetImage("assets/images/Star.png")),
+                      ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        const Row(
-                          children: [
-                            Text("4.8"),
-                            Image(image: AssetImage("assets/images/Star.png")),
-                          ],
-                        ),
-                        const SizedBox(width: 99),
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xffFF7043)),
@@ -71,11 +74,11 @@ class ReviewsList extends StatelessWidget {
                                 Icon(Icons.edit_square),
                                 Text("Add Review ")
                               ],
-                            ))
+                            )),
                       ],
-                    ),
+                    )
                   ],
-                )
+                ),
               ],
             ),
             Expanded(

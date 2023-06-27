@@ -13,6 +13,7 @@ class Gridcontent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap: () => Navigator.push(
           context,
@@ -25,24 +26,25 @@ class Gridcontent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-            child: Container(
-            
-              decoration: BoxDecoration(
-                color: const Color(0xffF5F6FA),
-                borderRadius:
-                    BorderRadius.circular(15), // Rounded corners with radius 15
-              ),
-              child: Image(
-                image: images,
-                fit: BoxFit.fill,
-              ),
+          Container(
+            height: screenHeight * 0.2,
+            decoration: BoxDecoration(
+              color: const Color(0xffF5F6FA),
+              borderRadius:
+                  BorderRadius.circular(15), // Rounded corners with radius 15
+            ),
+            child: Image(
+              image: images,
+              fit: BoxFit.fill,
             ),
           ),
+          const SizedBox(height: 20),
           Text(
             textt,
+            maxLines: 2,
             style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
           ),
+          const SizedBox(height: 5),
           Text(
             "\$$price",
             style: const TextStyle(fontWeight: FontWeight.bold),

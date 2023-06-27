@@ -22,6 +22,8 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -39,7 +41,7 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 15, right: 15, top: 60),
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -96,22 +98,25 @@ class ProductDetailScreen extends StatelessWidget {
                   const SizedBox(
                     height: 8,
                   ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ImagesContainer(
-                          imageee:
-                              AssetImage("assets/images/Rectangle 575.png")),
-                      ImagesContainer(
-                          imageee:
-                              AssetImage("assets/images/Rectangle 576.png")),
-                      ImagesContainer(
-                          imageee:
-                              AssetImage("assets/images/Rectangle 577.png")),
-                      ImagesContainer(
-                          imageee:
-                              AssetImage("assets/images/Rectangle 578.png"))
-                    ],
+                  SizedBox(
+                    height: screenHeight * 0.1,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: const [
+                        ImagesContainer(
+                            imageee:
+                                AssetImage("assets/images/Rectangle 575.png")),
+                        ImagesContainer(
+                            imageee:
+                                AssetImage("assets/images/Rectangle 576.png")),
+                        ImagesContainer(
+                            imageee:
+                                AssetImage("assets/images/Rectangle 577.png")),
+                        ImagesContainer(
+                            imageee:
+                                AssetImage("assets/images/Rectangle 578.png"))
+                      ],
+                    ),
                   ),
                   const Padding(
                     padding: EdgeInsets.only(top: 6),
@@ -179,93 +184,91 @@ class ProductDetailScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 6),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 6),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
+                        const Text(
                           "Reviews",
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.w500),
                         ),
-                        Text(
-                          "View All",
-                          style: lightHeadingText,
+                        GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ReviewsList(),
+                              )),
+                          child: const Text(
+                            "View All",
+                            style: lightHeadingText,
+                          ),
                         ),
                       ],
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ReviewsList(),
-                          ));
-                    },
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            ClipOval(
-                              child: CircleAvatar(
-                                radius: 20,
-                                backgroundColor: Color(0xffCCD9E0),
-                                backgroundImage: AssetImage(
-                                    "assets/images/Rectangle_Copy_157-removebg-preview.png"),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          ClipOval(
+                            child: CircleAvatar(
+                              radius: 20,
+                              backgroundColor: Color(0xffCCD9E0),
+                              backgroundImage: AssetImage(
+                                  "assets/images/Rectangle_Copy_157-removebg-preview.png"),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Ronald Richard",
+                                style: TextStyle(fontWeight: FontWeight.w500),
                               ),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Ronald Richard",
-                                  style: TextStyle(fontWeight: FontWeight.w500),
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Remix.alarm_line,
-                                      color: Color(0xff8F959E),
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      "30 sep,2020",
-                                      style: lightHeadingText,
-                                    )
-                                  ],
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  "4.8",
-                                  style: TextStyle(fontWeight: FontWeight.w500),
-                                ),
-                                Text(
-                                  " Rating",
-                                  style: lightHeadingText,
-                                )
-                              ],
-                            ),
-                            Image(image: AssetImage("assets/images/Star.png"))
-                          ],
-                        )
-                      ],
-                    ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Remix.alarm_line,
+                                    color: Color(0xff8F959E),
+                                    size: 20,
+                                  ),
+                                  Text(
+                                    "30 sep,2020",
+                                    style: lightHeadingText,
+                                  )
+                                ],
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                "4.8",
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                " Rating",
+                                style: lightHeadingText,
+                              )
+                            ],
+                          ),
+                          Image(image: AssetImage("assets/images/Star.png"))
+                        ],
+                      )
+                    ],
                   ),
                   const Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae amet...",
@@ -298,14 +301,17 @@ class ProductDetailScreen extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  CustomButton(
-                    text: 'Add to Cart',
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: ((context) => const AddToCartScreen())));
-                    },
+                  Center(
+                    child: CustomButton(
+                      text: 'Add to Cart',
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) =>
+                                    const AddToCartScreen())));
+                      },
+                    ),
                   ),
                 ],
               ),

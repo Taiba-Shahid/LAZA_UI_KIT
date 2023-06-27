@@ -5,19 +5,17 @@ class BorderTextFeild extends StatelessWidget {
   final String hinttext;
   final IconData? icons;
   final double heights;
-  final double widths;
   const BorderTextFeild(
       {super.key,
       required this.hinttext,
       this.icons,
       required this.heights,
-      required this.widths});
+      });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: heights,
-      width: widths,
       child: TextField(
         decoration: InputDecoration(
           focusedBorder: const UnderlineInputBorder(

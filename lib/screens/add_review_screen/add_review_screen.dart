@@ -18,7 +18,7 @@ class AddReviewScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 60),
+              padding: const EdgeInsets.only(top: 20),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -41,7 +41,9 @@ class AddReviewScreen extends StatelessWidget {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
             const BorderTextFeild(
-                hinttext: "Type your name ", heights: 50, widths: 330),
+              hinttext: "Type your name ",
+              heights: 50,
+            ),
             const Text(
               "How was your experience ?",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),

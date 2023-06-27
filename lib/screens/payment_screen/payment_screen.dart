@@ -102,7 +102,6 @@ class PaymentScreen extends StatelessWidget {
                     const BorderTextFeild(
                       hinttext: "Write your name..",
                       heights: 50,
-                      widths: 350,
                       icons: null,
                     ),
                     const SizedBox(
@@ -119,8 +118,6 @@ class PaymentScreen extends StatelessWidget {
                     const BorderTextFeild(
                       hinttext: "Type your card number",
                       heights: 50,
-                      widths: 350,
-                      icons: null,
                     ),
                     const SizedBox(
                       height: 10,
@@ -140,7 +137,6 @@ class PaymentScreen extends StatelessWidget {
                             BorderTextFeild(
                               hinttext: "Contry",
                               heights: 50,
-                              widths: 150,
                             )
                           ],
                         ),
@@ -153,8 +149,7 @@ class PaymentScreen extends StatelessWidget {
                             SizedBox(
                               height: 5,
                             ),
-                            BorderTextFeild(
-                                hinttext: "City", heights: 50, widths: 150)
+                            BorderTextFeild(hinttext: "City", heights: 50)
                           ],
                         ),
                       ],

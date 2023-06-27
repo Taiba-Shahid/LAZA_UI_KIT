@@ -47,7 +47,7 @@ class OrderConfirmedScreen extends StatelessWidget {
               height: 70,
             ),
             const BorderTextFeild(
-                hinttext: "Go to orders", heights: 50, widths: 335),
+                hinttext: "Go to orders", heights: 50),
             const SizedBox(
               height: 30,
             ),

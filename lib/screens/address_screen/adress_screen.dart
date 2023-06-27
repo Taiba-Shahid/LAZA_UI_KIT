@@ -52,7 +52,6 @@ class AdressScreen extends StatelessWidget {
               const BorderTextFeild(
                 hinttext: "Type your name",
                 heights: 50,
-                widths: 350,
                 icons: null,
               ),
               const SizedBox(
@@ -70,7 +69,6 @@ class AdressScreen extends StatelessWidget {
                       BorderTextFeild(
                         hinttext: "Contry",
                         heights: 50,
-                        widths: 150,
                       )
                     ],
                   ),
@@ -81,7 +79,9 @@ class AdressScreen extends StatelessWidget {
                         "City",
                       ),
                       BorderTextFeild(
-                          hinttext: "City", heights: 50, widths: 150)
+                        hinttext: "City",
+                        heights: 50,
+                      )
                     ],
                   ),
                 ],
@@ -97,7 +97,9 @@ class AdressScreen extends StatelessWidget {
                 height: 10,
               ),
               const BorderTextFeild(
-                  hinttext: "Type your number", heights: 50, widths: 350),
+                hinttext: "Type your number",
+                heights: 50,
+              ),
               // Container(
 
               const SizedBox(
@@ -111,7 +113,9 @@ class AdressScreen extends StatelessWidget {
                 height: 10,
               ),
               const BorderTextFeild(
-                  hinttext: "Enter your address", heights: 50, widths: 350),
+                hinttext: "Enter your address",
+                heights: 50,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

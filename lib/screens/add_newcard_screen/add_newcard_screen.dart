@@ -79,7 +79,6 @@ class AddnewCard extends StatelessWidget {
           const BorderTextFeild(
             hinttext: "Write your name..",
             heights: 50,
-            widths: 350,
             icons: null,
           ),
           const SizedBox(
@@ -95,7 +94,6 @@ class AddnewCard extends StatelessWidget {
           const BorderTextFeild(
             hinttext: "Write your name..",
             heights: 50,
-            widths: 350,
             icons: null,
           ),
           const SizedBox(
@@ -116,7 +114,6 @@ class AddnewCard extends StatelessWidget {
                   BorderTextFeild(
                     hinttext: "Contry",
                     heights: 50,
-                    widths: 150,
                   )
                 ],
               ),
@@ -129,7 +126,7 @@ class AddnewCard extends StatelessWidget {
                   SizedBox(
                     height: 5,
                   ),
-                  BorderTextFeild(hinttext: "City", heights: 50, widths: 150)
+                  BorderTextFeild(hinttext: "City", heights: 50),
                 ],
               ),
             ],

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
+import 'package:twentyscreen_app/screens/home_screen/home_screen.dart';
 import 'package:twentyscreen_app/utils/text.dart';
 import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
@@ -45,12 +46,18 @@ class _VerificationScreenState extends State<VerificationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(left: 15, right: 15, top: 60),
-        child: SingleChildScrollView(
+    final screenHeight = MediaQuery.of(context).size.height;
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Padding(
+          padding: const EdgeInsets.only(left: 15, right: 15),
           child: Column(
             children: [
+              SizedBox(
+                height: screenHeight * 0.05, // 5% of screen height
+              ),
               Row(
                 children: [
                   CircularButton(
@@ -63,16 +70,17 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 height: 20,
               ),
               const ExtraBoldText(verybold: "Verification Code"),
-              const Image(image: AssetImage("assets/images/IMG.png")),
+              Image(
+                image: const AssetImage("assets/images/IMG.png"),
+                height: screenHeight * 0.3,
+              ),
               const SizedBox(
                 height: 30,
               ),
               const Pinput(
                 length: 4,
               ),
-              const SizedBox(
-                height: 150,
-              ),
+              const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -91,11 +99,14 @@ class _VerificationScreenState extends State<VerificationScreen> {
               ),
               CustomButton(
                 text: 'Confirm Code',
+                marginBottom: 20,
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const NewPasswordScreen()));
+                          builder: (context) => HomeScreen(
+                                scaffoldKey: GlobalKey(),
+                              )));
                 },
               ),
             ],

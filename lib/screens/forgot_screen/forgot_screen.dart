@@ -4,7 +4,7 @@ import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
 import 'package:twentyscreen_app/widgets/custom_textfeild.dart';
 
-import '../verification_screen/verification_screen.dart';
+import '../new_password_screen/new_password_screen.dart';
 
 class ExtraBoldText extends StatelessWidget {
   final String verybold;
@@ -25,12 +25,17 @@ class ForgotScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
-        padding: const EdgeInsets.only(left: 15, right: 15, top: 60),
+        padding: const EdgeInsets.only(left: 15, right: 15),
         child: Column(
           children: [
+            SizedBox(
+              height: screenHeight * 0.05,
+            ),
             Row(
               children: [
                 CircularButton(
@@ -43,14 +48,20 @@ class ForgotScreen extends StatelessWidget {
               height: 20,
             ),
             const ExtraBoldText(verybold: "Forgot Password"),
-            const Image(image: AssetImage("assets/images/IMG.png")),
+            Image(
+              image: const AssetImage(
+                "assets/images/IMG.png",
+              ),
+              height: screenHeight * 0.3,
+            ),
             const SizedBox(
               height: 30,
             ),
             const CostumnTextFeild(textFeildName: "Email Adress"),
-            const SizedBox(
-              height: 115,
-            ),
+            // SizedBox(
+            //   height: screenHeight * 0.1,
+            // ),
+            const Spacer(),
             const Text(
               "Please write your email to receive a",
               style: lightHeadingText,
@@ -64,11 +75,12 @@ class ForgotScreen extends StatelessWidget {
             ),
             CustomButton(
               text: 'Confirm Mail',
+              marginBottom: 20,
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const VerificationScreen()));
+                        builder: (context) => const NewPasswordScreen()));
               },
             ),
           ],

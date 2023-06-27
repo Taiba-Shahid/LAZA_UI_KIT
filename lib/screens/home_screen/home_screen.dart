@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:remixicon/remixicon.dart';
-import 'package:twentyscreen_app/screens/drawer_screen/drawer_screen.dart';
 import 'package:twentyscreen_app/screens/items_screens/items_screens.dart';
 import 'package:twentyscreen_app/utils/colors.dart';
 import 'package:twentyscreen_app/utils/text.dart';
@@ -12,154 +11,157 @@ import 'components/choosebrand_containers.dart';
 import 'components/gridcontent.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
+  const HomeScreen({super.key, required this.scaffoldKey});
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      key: _key,
-      drawer: const Drawer(
-        child: DrawerScreen(),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 60,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CircularButton(
-                    icon: Remix.menu_2_fill,
-                    onPressed: () {
-                      _key.currentState?.openDrawer();
-                    }),
-                CircularButton(
-                  icon: Remix.shopping_cart_fill,
-                  onPressed: () {},
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const ExtraBoldText(verybold: "Hello"),
-            const Text(
-              "Welcome to Laza",
-              style: lightHeadingText,
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const BorderTextFeild(
-                  hinttext: "Search..",
-                  heights: 50,
-                  widths: 260,
-                  icons: Icons.search,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ItemScreen()));
-                  },
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        color: purplecolor,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: const Icon(
-                      Remix.user_voice_fill,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Choose Brand",
-                  style: headingText,
-                ),
-                Text(
-                  "View All",
-                  style: lightHeadingText,
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: screenHeight * 0.05,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ChooseBrand(
-                      addimage: AssetImage(
-                        "assets/images/Adidas.png",
-                      ),
-                      text: "Adidas"),
-                  SizedBox(
-                    width: 8,
+                  CircularButton(
+                      icon: Remix.menu_2_fill,
+                      onPressed: () {
+                        widget.scaffoldKey.currentState?.openDrawer();
+                      }),
+                  CircularButton(
+                    icon: Remix.shopping_cart_fill,
+                    onPressed: () {},
                   ),
-                  ChooseBrand(
-                      addimage: AssetImage("assets/images/Vector.png"),
-                      text: "Nike"),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  ChooseBrand(
-                      addimage: AssetImage("assets/images/fila-9 1.png"),
-                      text: "Fila"),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  ChooseBrand(
-                      addimage: AssetImage("assets/images/puma-logo 1.png"),
-                      text: "Puma"),
                 ],
               ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "New Arrival",
-                  style: headingText,
+              const SizedBox(
+                height: 20,
+              ),
+              const ExtraBoldText(verybold: "Hello"),
+              const Text(
+                "Welcome to Laza",
+                style: lightHeadingText,
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Expanded(
+                    child: BorderTextFeild(
+                      hinttext: "Search..",
+                      heights: 50,
+                      icons: Icons.search,
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ItemScreen()));
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                          color: purplecolor,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: const Icon(
+                        Remix.user_voice_fill,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Choose Brand",
+                    style: headingText,
+                  ),
+                  Text(
+                    "View All",
+                    style: lightHeadingText,
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              SizedBox(
+                height: screenHeight * 0.08,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    ChooseBrand(
+                        addimage: AssetImage(
+                          "assets/images/Adidas.png",
+                        ),
+                        text: "Adidas"),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    ChooseBrand(
+                        addimage: AssetImage("assets/images/Vector.png"),
+                        text: "Nike"),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    ChooseBrand(
+                        addimage: AssetImage("assets/images/fila-9 1.png"),
+                        text: "Fila"),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    ChooseBrand(
+                        addimage: AssetImage("assets/images/puma-logo 1.png"),
+                        text: "Puma"),
+                  ],
                 ),
-                Text(
-                  "View All",
-                  style: lightHeadingText,
-                )
-              ],
-            ),
-            Expanded(
-              child: GridView.count(
-                childAspectRatio: 0.8,
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "New Arrival",
+                    style: headingText,
+                  ),
+                  Text(
+                    "View All",
+                    style: lightHeadingText,
+                  )
+                ],
+              ),
+              GridView.count(
+                childAspectRatio: 0.7,
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 mainAxisSpacing: 10, // Number of columns
                 children: const [
                   Gridcontent(
@@ -182,9 +184,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       textt: "Trail Running Jacket Nike Windrunner",
                       price: 400)
                 ],
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
