@@ -5,11 +5,18 @@ import 'package:twentyscreen_app/widgets/custom_button.dart';
 
 import '../get_started_screen/get_started_screen.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
 
   @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
         body: Container(
       alignment: Alignment.center,
@@ -51,7 +58,7 @@ class WelcomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       CustomButton(
-                        text: 'Men',
+                        text: "Men",
                         color: const Color(0xffF5F6FA),
                         textColor: const Color(0xff8F959E),
                         width: 148,
