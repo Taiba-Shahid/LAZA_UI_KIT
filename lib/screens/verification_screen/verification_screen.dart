@@ -8,7 +8,6 @@ import 'package:twentyscreen_app/widgets/circular_button.dart';
 import 'package:twentyscreen_app/widgets/custom_button.dart';
 
 import '../forgot_screen/forgot_screen.dart';
-import '../new_password_screen/new_password_screen.dart';
 
 class VerificationScreen extends StatefulWidget {
   const VerificationScreen({super.key});

@@ -9,7 +9,7 @@ import '../get_started_screen/get_started_screen.dart';
 // Use Expanded or Flexible whereever possible
 // Screen sizes are dynamic
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
 
   @override

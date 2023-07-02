@@ -9,28 +9,30 @@ class WhishlistScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(left: 15, right: 15),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 60),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CircularButton(
-                      icon: Icons.arrow_back,
-                      onPressed: () {
-                        Navigator.pop(context);
-                      }),
-                  const Text(
-                    "Wishlist",
-                    style: headingText,
-                  ),
-                  CircularButton(icon: Icons.shopping_cart, onPressed: () {}),
-                ],
-              ),
+            SizedBox(
+              height: screenHeight * 0.05,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CircularButton(
+                    icon: Icons.arrow_back,
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }),
+                const Text(
+                  "Wishlist",
+                  style: headingText,
+                ),
+                CircularButton(icon: Icons.shopping_cart, onPressed: () {}),
+              ],
             ),
             const SizedBox(
               height: 15,

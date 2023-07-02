@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:twentyscreen_app/screens/add_to_cart_screen/components/addresses.dart';
 import 'package:twentyscreen_app/widgets/circular_button.dart';
-import 'package:twentyscreen_app/widgets/custom_button.dart';
 
 import '../../utils/text.dart';
+import '../../widgets/custom_button.dart';
+import 'components/addresses.dart';
 import 'components/sportwear_containers.dart';
 
 class AddToCartScreen extends StatefulWidget {
@@ -16,13 +16,17 @@ class AddToCartScreen extends StatefulWidget {
 class _AddToCartScreenState extends State<AddToCartScreen> {
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 30, left: 15, right: 15),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 15, right: 15),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: screenHeight * 0.05,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -34,13 +38,10 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                     "Cart",
                     style: headingText,
                   ),
-                  const SizedBox(
-                    width: 0,
-                  ),
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.5,
+                height: MediaQuery.of(context).size.height * 0.6,
                 child: const Column(
                   children: [
                     Sportwear(image: AssetImage("assets/images/image 6.png")),
@@ -56,9 +57,6 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                     ),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 10,
               ),
               const Addresses(
                   paymentname: "Payment Methode",

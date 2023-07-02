@@ -39,10 +39,13 @@ class Gridcontent extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          Text(
-            textt,
-            maxLines: 2,
-            style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
+          Expanded(
+            child: Text(
+              textt,
+              maxLines: 2,
+              style:
+                  const TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
+            ),
           ),
           const SizedBox(height: 5),
           Text(

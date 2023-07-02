@@ -12,11 +12,19 @@ class AddnewCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+ 
     return Scaffold(
         body: SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.only(left: 15, right: 15, top: 60),
+        padding: const EdgeInsets.only(
+          left: 15,
+          right: 15,
+        ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          SizedBox(
+            height: screenHeight * 0.05,
+          ),
           Row(
             children: [
               CircularButton(
@@ -33,36 +41,30 @@ class AddnewCard extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 30,
+            height: 15,
           ),
           SizedBox(
-            height: 60,
+            height: screenHeight * 0.1,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: const [
-                Row(
-                  children: [
-                    ColorChangeContainer(
-                        paymentimages: AssetImage("assets/images/image 9.png")),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    ColorChangeContainer(
-                        paymentimages:
-                            AssetImage("assets/images/image 10.png")),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    ColorChangeContainer(
-                        paymentimages:
-                            AssetImage("assets/images/Vector (1).png")),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    ColorChangeContainer(
-                        paymentimages: AssetImage("assets/images/image 9.png")),
-                  ],
+                ColorChangeContainer(
+                    paymentimages: AssetImage("assets/images/image 9.png")),
+                SizedBox(
+                  width: 10,
                 ),
+                ColorChangeContainer(
+                    paymentimages: AssetImage("assets/images/image 10.png")),
+                SizedBox(
+                  width: 10,
+                ),
+                ColorChangeContainer(
+                    paymentimages: AssetImage("assets/images/Vector (1).png")),
+                SizedBox(
+                  width: 10,
+                ),
+                ColorChangeContainer(
+                    paymentimages: AssetImage("assets/images/image 9.png")),
               ],
             ),
           ),
@@ -102,46 +104,55 @@ class AddnewCard extends StatelessWidget {
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "XPV",
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  BorderTextFeild(
-                    hinttext: "Contry",
-                    heights: 50,
-                  )
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "XPV",
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    BorderTextFeild(
+                      hinttext: "Contry",
+                      heights: 50,
+                    )
+                  ],
+                ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "CCV",
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  BorderTextFeild(hinttext: "City", heights: 50),
-                ],
+              SizedBox(
+                width: 10,
+              ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "CCV",
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    BorderTextFeild(hinttext: "City", heights: 50),
+                  ],
+                ),
               ),
             ],
           ),
-          const SizedBox(
-            height: 190,
+          SizedBox(
+            height: screenHeight * 0.1,
           ),
-          CustomButton(
-              text: "Add Card",
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const OrderConfirmedScreen()));
-              })
+          Center(
+            child: CustomButton(
+                text: "Add Card",
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const OrderConfirmedScreen()));
+                }),
+          )
         ]),
       ),
     ));

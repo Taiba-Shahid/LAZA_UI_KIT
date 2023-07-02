@@ -10,12 +10,17 @@ class OrderConfirmedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       drawer: const Drawer(),
       body: Padding(
-        padding: const EdgeInsets.only(top: 60, left: 15, right: 15),
+        padding: const EdgeInsets.only(left: 15, right: 15),
         child: Column(
           children: [
+            SizedBox(
+              height: screenHeight * 0.05,
+            ),
             Row(
               children: [
                 CircularButton(
@@ -25,15 +30,15 @@ class OrderConfirmedScreen extends StatelessWidget {
                     }),
               ],
             ),
-            const SizedBox(
-              height: 50,
+            SizedBox(
+              height: screenHeight * 0.05,
             ),
             const Image(
               image: AssetImage("assets/images/Group 24 (3).png"),
               fit: BoxFit.contain,
             ),
-            const SizedBox(
-              height: 60,
+            SizedBox(
+              height: screenHeight * 0.05,
             ),
             const ExtraBoldText(verybold: "Order Confirmed"),
             const SizedBox(
@@ -43,13 +48,12 @@ class OrderConfirmedScreen extends StatelessWidget {
               "Your order has been confirmed, we will send\n          you confirmation email shortly.",
               style: lightHeadingText,
             ),
-            const SizedBox(
-              height: 70,
+            SizedBox(
+              height: screenHeight * 0.03,
             ),
-            const BorderTextFeild(
-                hinttext: "Go to orders", heights: 50),
+            const BorderTextFeild(hinttext: "Go to orders", heights: 40),
             const SizedBox(
-              height: 30,
+              height: 10,
             ),
             CustomButton(text: "Continue Shopping", onPressed: () {})
           ],
